@@ -3,6 +3,7 @@ package usecase
 import "../../app/domain"
 
 type TweetInteractor struct {
+	tweetRepository TweetRepository
 }
 
 func (interactor *TweetInteractor) Tweets() (domain.Tweet, error) {
