@@ -1,6 +1,8 @@
 package controller
 
 import (
+	"strconv"
+
 	"../../../app/interface/database"
 	"../../../app/usecase"
 	"github.com/gin-gonic/gin"
@@ -22,7 +24,9 @@ func (controller *TweetController) Index(c Context) {
 	})
 }
 
-func (controller *TweetController) Show(c Context) {
+func (controller *TweetController) Detail(c Context) {
+	id, _ := strconv.Atoi(c.Param("id"))
+	print(id)
 	c.JSON(200, gin.H{
 		"message": "Hello World",
 	})

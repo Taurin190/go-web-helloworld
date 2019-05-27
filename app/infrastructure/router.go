@@ -12,6 +12,7 @@ func init() {
 
 	tweetController := controllers.GetTweetController(GetDBHandler())
 	router.GET("/tweets", func(c *gin.Context) { tweetController.Index(c) })
+	router.GET("/tweets/:id", func(c *gin.Context) { tweetController.Detail(c) })
 
 	Router = router
 }
